@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant+Garamond", serif;
+  --font-sans: "Montserrat", sans-serif;
+  
+  --color-brand-orange: #FF6B35;
+  --color-brand-red: #D72638;
+  --color-brand-gold: #F6AE2D;
+  --color-brand-brown: #2B1D15;
+  --color-brand-cream: #FFFBF5;
+  --color-brand-surface: #FEF3E2;
+  --color-brand-border: #FFD8A8;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-brand-cream text-brand-brown font-sans antialiased relative;
+  }
+  
+  body::before {
+    content: "";
+    @apply fixed inset-0 z-[-1] opacity-[0.03] pointer-events-none;
+    background-image: url("https://www.transparenttextures.com/patterns/felt.png");
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-bold text-brand-brown;
+  }
+}
+
+.tasty-card {
+  @apply bg-white rounded-[32px] border border-brand-border shadow-[0_10px_30px_-15px_rgba(255,107,53,0.2)] transition-all duration-500 hover:shadow-[0_20px_40px_-10px_rgba(255,107,53,0.3)] hover:-translate-y-2;
+}
+
+.tasty-glow {
+  @apply shadow-[0_0_20px_rgba(255,107,53,0.3)];
+}
+
+.nav-link {
+  @apply relative text-[11px] uppercase tracking-[0.2em] font-bold transition-all duration-300 text-brand-brown/60 hover:text-brand-orange;
+}
+
+.nav-link.active {
+  @apply text-brand-orange;
+}
+
+.nav-link.active::after {
+  content: "";
+  @apply absolute -bottom-1 left-0 w-full h-0.5 bg-brand-orange rounded-full;
+}
+
+.pill-button {
+  @apply rounded-full px-8 py-4 text-xs font-black uppercase tracking-[0.15em] transition-all duration-300 shadow-md hover:shadow-xl active:scale-95;
+}
+
+.gradient-orange {
+  @apply bg-gradient-to-br from-brand-orange to-brand-red;
+}
+

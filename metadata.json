@@ -1,0 +1,12 @@
+{
+  "name": "V.T.E Table 529",
+  "description": "A modern American restaurant in WaKeeney, Kansas, offering exceptional food and friendly service with online ordering for dine-in and takeaway.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "E-commerce",
+    "Food Ordering",
+    "Reservations"
+  ]
+}
